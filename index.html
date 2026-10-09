@@ -1,5 +1,7 @@
 <!doctype html>
 <html lang="en">
+token-gate.css
+config.jsscript>
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>2027 Stand Order Calculator</title>
@@ -94,4 +96,6 @@ function showProduct(el,pinned=false){const key=el.dataset.info,info=productInfo
 function positionPop(el){if(matchMedia('(max-width:880px),(hover:none)').matches)return;const r=el.getBoundingClientRect(),w=Math.min(460,innerWidth-24),h=Math.min(pop.scrollHeight||500,innerHeight-24);let left=r.left+r.width/2-w/2;left=Math.max(12,Math.min(left,innerWidth-w-12));let top=r.top-h-12;if(top<12)top=Math.min(innerHeight-h-12,r.bottom+12);pop.style.left=left+'px';pop.style.top=Math.max(12,top)+'px'}
 function hideProduct(force=false){clearTimeout(popTimer);if(force||pop.dataset.pinned!=='1')pop.classList.remove('show')}
 document.addEventListener('pointerover',e=>{const btn=e.target.closest('.info-button');if(btn&&matchMedia('(hover:hover)').matches){clearTimeout(popTimer);showProduct(btn.closest('.info-target'),false)}});document.addEventListener('pointerout',e=>{const btn=e.target.closest('.info-button');if(btn&&matchMedia('(hover:hover)').matches)popTimer=setTimeout(()=>hideProduct(),160)});pop.addEventListener('pointerenter',()=>clearTimeout(popTimer));pop.addEventListener('pointerleave',()=>hideProduct());document.addEventListener('click',e=>{const btn=e.target.closest('.info-button');if(btn){e.preventDefault();e.stopPropagation();showProduct(btn.closest('.info-target'),true)}else if(!e.target.closest('#productPop'))hideProduct(true)});document.addEventListener('keydown',e=>{const btn=e.target.closest?.('.info-button');if(btn&&(e.key==='Enter'||e.key===' ')){e.preventDefault();showProduct(btn.closest('.info-target'),true)}if(e.key==='Escape')hideProduct(true)});pop.querySelector('.close').onclick=()=>hideProduct(true);addEventListener('resize',()=>hideProduct(true));addEventListener('scroll',()=>hideProduct(true),true);calc();
-</script></body></html>
+</script>
+token-gate.jsscript>
+</body></html>
